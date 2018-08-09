@@ -1,0 +1,31 @@
+.opening-hours {
+  width: 95%;
+  display: block;
+  margin: 0 20px 20px 20px;
+}
+
+.info-text {
+  display: inline-block;
+  vertical-align: top;
+  width: 300px;
+  margin: 0 20px 20px 20px;
+}
+
+#map {
+  display: inline-block;
+  text-align: center;
+  width: 300px;
+  margin: 0 20px;
+}
+
+.contactID {
+  font-weight: bold;
+  color: #72bcd4;
+}
+
+/* Media Queries */
+@media screen and (max-width: 720px) {
+  .info-text {
+    width: 200px;
+  }
+}

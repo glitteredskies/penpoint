@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" lang="en">
+  <title>Penpoint. - Home</title>
+  <script src="https://use.fontawesome.com/70cb0f40aa.js"></script>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/layout.css" />
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Lora|Source+Sans+Pro:300');
+  </style>
+</head>
+<body>
+
+  <div id="page">
+
+    <header>
+      <section class="header-links">
+        <div class="basket-top">
+          <a title="basket" href="underConstruction.html" aria-haspopup="true">
+            <span class="side-icon"><i class="fa fa-shopping-basket" aria-hidden="true"></span></i>
+            <span class="basket">basket</span>
+          </a>
+        </div>
+        <div class="user-top">
+          <a title="user" href="register.html" aria-haspopup="true">
+            <span class="side-icon"><i class="fa fa-user-plus" aria-hidden="true"></span></i><span class="register">register</span>
+          </a>
+          <a title="user" href="myAccount.html" aria-haspopup="true">
+            <span class="side-icon"><i class="fa fa-user" aria-hidden="true"></span></i><span class="sign-in">sign in</span>
+          </a>
+        </div>
+      </section>
+      <section class="header-logo">
+        <div class="logo-top">
+          <a class="title" title="penpoint" href="index.html"><img src='images/penpoint logo.png'></a>
+        </div>
+      </section>
+    </header>
+
+    <section class="navigation">
+      <div class="topnav" id="myTopnav">
+        <a href="index.html">home</a>
+        <a href="productNew.html">notebooks</a>
+        <a href="underConstruction.html">stationary</a>
+        <a href="underConstruction.html">organising</a>
+        <a href="underConstruction.html">about</a>
+        <a class="openBtn" onclick="openSearch()">search</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+      </div>
+    </section>
+
+    <section class="main">
+
+      <h1>Registration Succesful!</h1>
+
+      <div id="myOverlay" class="overlay">
+        <span class="closebtn" onclick="closeSearch()" title="Close Overlay"><i class="fa fa-times"></i></span>
+        <div class="overlay-content">
+          <form>
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit" class="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </div>
+
+    </section>
+
+    <footer>
+      <div class="important-links">
+        <a title="privacy policy" href="underConstruction.html" aria-haspopup="true">privacy policy</a>
+        <a title="terms and conditions" href="underConstruction.html" aria-haspopup="true">terms and conditions</a>
+        <a title="shipping" href="underConstruction.html" aria-haspopup="true">shipping</a>
+        <a title="contact us" href="contactUs.html" aria-haspopup="true">contact us</a>
+        <a title="blog" href="underConstruction.html" aria-haspopup="true">blog</a>
+      </div>
+    </footer>
+
+    <script>
+    // Open the full screen search box
+    function openSearch() {
+      document.getElementById("myOverlay").style.display = "block";
+    }
+
+    // Close the full screen search box
+    function closeSearch() {
+      document.getElementById("myOverlay").style.display = "none";
+    }
+
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" lang="en">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <meta name="description" content="Penpoint. - find your new stationary crush here." />
+  <meta name="keywords" content="Penpoint, stationary, notebooks, journals, Auckland, markers, register"/>
+  <title>Penpoint. - Register</title>
+  <script src="https://use.fontawesome.com/70cb0f40aa.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/register.css" />
+  <link rel="stylesheet" type="text/css" href="css/layout.css" />
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Lora|Source+Sans+Pro:300');
+  </style>
+</head>
+<body>
+
+  <div id="page">
+
+    <header>
+      <section class="header-links">
+        <div class="basket-top">
+          <a title="basket" href="underConstruction.html" aria-haspopup="true">
+            <span class="side-icon"><i class="fa fa-shopping-basket" aria-hidden="true"></span></i>
+            <span class="basket">basket</span>
+          </a>
+        </div>
+        <div class="user-top">
+          <a title="user" href="register.html" aria-haspopup="true">
+            <span class="side-icon"><i class="fa fa-user-plus" aria-hidden="true"></span></i><span class="register">register</span>
+          </a>
+          <a title="user" href="myAccount.html" aria-haspopup="true">
+            <span class="side-icon"><i class="fa fa-user" aria-hidden="true"></span></i><span class="sign-in">sign in</span>
+          </a>
+        </div>
+      </section>
+      <section class="header-logo">
+        <div class="logo-top">
+          <a class="title" title="penpoint" href="index.html"><img src='images/penpoint logo.png'></a>
+        </div>
+      </section>
+    </header>
+
+    <section class="navigation">
+      <div class="topnav" id="myTopnav">
+        <a href="index.html">home</a>
+        <a href="productNew.html">notebooks</a>
+        <a href="underConstruction.html">stationary</a>
+        <a href="underConstruction.html">organising</a>
+        <a href="underConstruction.html">about</a>
+        <a class="openBtn" onclick="openSearch()">search</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+      </div>
+    </section>
+
+    <section class="main">
+
+      <h1>Create Account</h1>
+
+      <form action="success.html" method="post" name="contactform">
+
+        <div>
+          <label for="firstname">First Name</label>
+          <input id="firstname" type="text" name="firstname" size="30" />
+          <span id="firstname_msg"></span>
+        </div>
+
+        <div>
+          <label for="familyname">Family Name</label>
+          <input id="familyname" type="text" name="familyname" size="30" />
+          <span id="familyname_msg"></span>
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" size="30" />
+          <span id="email_msg"></span>
+        </div>
+
+        <div>
+          <label for="passw">Password</label>
+          <input id="passw" type="password" name="password" size="30" />
+          <span id="passw_msg"></span>
+        </div>
+
+        <div>
+          <input id="newsletter" name="newsletter" type="checkbox" value="agree" />
+          <label for="newsletter"><br>I would like to receive a weekly newsletter</label>
+        </div>
+
+        <div>
+          <input id="tandcagree" name="tandcagree" type="checkbox" value="agree" />
+          <label for="tandcagree">I agree to the terms and conditions</label>
+          <span id="tandcagree_msg"></span>
+        </div>
+
+        <div>
+          <button type="submit" name="submit" id="submit" class="submit-form" style="vertical-align:middle"><span>Submit</span></button>
+        </div>
+      </form>
+
+      <div id="myOverlay" class="overlay">
+        <span class="closebtn" onclick="closeSearch()" title="Close Overlay"><i class="fa fa-times"></i></span>
+        <div class="overlay-content">
+          <form>
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit" class="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </div>
+
+    </section>
+
+    <footer>
+      <div class="important-links">
+        <a title="privacy policy" href="underConstruction.html" aria-haspopup="true">privacy policy</a>
+        <a title="terms and conditions" href="underConstruction.html" aria-haspopup="true">terms and conditions</a>
+        <a title="shipping" href="underConstruction.html" aria-haspopup="true">shipping</a>
+        <a title="contact us" href="contactUs.html" aria-haspopup="true">contact us</a>
+        <a title="blog" href="underConstruction.html" aria-haspopup="true">blog</a>
+      </div>
+    </footer>
+
+    <script>
+    /* This script validates content of form based on specific rules */
+
+      window.onload = init;
+
+      /* When page loads attach event to validate form */
+      function init() {
+        var formsubmit = document.getElementById('submit');
+        if (formsubmit) {
+          formsubmit.onclick = checkForm;
+        }
+      }
+
+      /* Test fields in form */
+      function checkForm() {
+        var firstname = document.getElementById('firstname').value;
+        var firstname_msg = document.getElementById('firstname_msg');
+        var valid = true;
+
+        // First name required, > 2 letters
+        if (firstname.length < 2) {
+          firstname_msg.innerHTML = "First name should be at least 2 letters in length.";
+          firstname_msg.className = 'error';
+          valid = false;
+        } else {
+          firstname_msg.innerHTML = "";
+          firstname_msg.className = '';
+        }
+
+          var familyname = document.getElementById('familyname').value;
+          var familyname_msg = document.getElementById('familyname_msg');
+
+          // Family name required, > 2 letters
+          if (familyname.length < 2) {
+            familyname_msg.innerHTML = "Family name should be at least 2 letters in length.";
+            familyname_msg.className = 'error';
+            valid = false;
+          } else {
+            familyname_msg.innerHTML = "";
+            familyname_msg.className = '';
+          }
+
+          var email = document.getElementById('email').value;
+          var email_msg = document.getElementById('email_msg');
+          var emailRegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+          // Email required, must be valid email address
+          if (!emailRegExp.test(email)) {
+            email_msg.innerHTML = "Must be a valid email address."
+            email_msg.className = 'error';
+            valid = false;
+          } else {
+            email_msg.innerHTML = "";
+            email_msg.className = '';
+          }
+
+          var passw = document.getElementById('passw').value;
+          var passw_msg = document.getElementById('passw_msg');
+          var passwRegExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+
+          // Password required, must have one numeric, one uppercase, one lowercase
+          if(!passwRegExp.test(passw)) {
+            passw_msg.innerHTML = "Password must be between 6-20 characters AND contain one number, one uppercase letter, and one lowercase letter."
+            passw_msg.className = 'error';
+            valid = false;
+          } else {
+            passw_msg.innerHTML = "";
+            passw_msg.className = '';
+          }
+
+
+          var tandcagree = document.getElementById('tandcagree').checked;
+          var tandcagree_msg = document.getElementById('tandcagree_msg');
+
+          // T&C's must be checked
+          if (!tandcagree) {
+            tandcagree_msg.innerHTML = "You must agree to the terms and conditions to continue.";
+            tandcagree_msg.className = 'error';
+            valid = false;
+          } else {
+            tandcagree_msg.innerHTML = "";
+            tandcagree_msg.className = '';
+          }
+
+          return valid;
+      }
+      </script>
+      <script>
+      // Open the full screen search box
+      function openSearch() {
+        document.getElementById("myOverlay").style.display = "block";
+      }
+
+      // Close the full screen search box
+      function closeSearch() {
+        document.getElementById("myOverlay").style.display = "none";
+      }
+      /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+      function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+              x.className += " responsive";
+          } else {
+              x.className = "topnav";
+          }
+      }
+      </script>
+
+</body>
+</html>
